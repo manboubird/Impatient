@@ -6,9 +6,13 @@
   :uberjar-name "impatient.jar"
   :aot [impatient.core]
   :main impatient.core
-  :dependencies [[org.clojure/clojure "1.4.0"]
-                 [cascalog "1.10.0"]
-                 [cascalog-more-taps "0.3.0"]
-                 [cascalog-checkpoint "0.2.0"]]
-  :profiles {:dev {:dependencies [[midje-cascalog "0.4.0"]]}
-             :provided {:dependencies [[org.apache.hadoop/hadoop-core "0.20.2-dev"]]}})
+  :dependencies [[org.clojure/clojure "1.5.1"]
+                 [cascalog "1.10.1"]
+                 [cascalog/cascalog-more-taps "1.10.1"]
+                 [cascalog/cascalog-checkpoint "1.10.1"]]
+  :profiles {:dev {:dependencies [[lein-midje "3.0.1"]
+                                  [cascalog/midje-cascalog "1.10.1"]]}
+             :provided {:dependencies [[org.apache.hadoop/hadoop-core "0.20.2-cdh3u2"]]}}
+  :repositories [["conjars.org" "http://conjars.org/repo"]
+                 ["cloudera" "https://repository.cloudera.com/content/groups/public/"]]
+  )
